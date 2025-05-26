@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analytics Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .chart-container { margin: 20px 0; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Resume Analytics Dashboard</h1>
+    
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="resume" accept=".pdf" required>
+        <button type="submit">Upload Resume</button>
+    </form>
+    
+    <h2>Skills Distribution</h2>
+    <div class="chart-container">
+        <img src="data:image/png;base64,{{ skills_plot }}" alt="Skills Distribution">
+    </div>
+    
+    <h2>Experience Distribution</h2>
+    <div class="chart-container">
+        <img src="data:image/png;base64,{{ exp_plot }}" alt="Experience Distribution">
+    </div>
+    
+    <h2>Skills Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in skills_data %}
+            <tr>
+                <td>{{ item.skill }}</td>
+                <td>{{ item.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h2>Experience Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Years of Experience</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for years in exp_data %}
+            <tr>
+                <td>{{ years }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
