@@ -1,100 +1,113 @@
-# Resume Parser with NLP & Analytics Dashboard
-A Python-based tool that extracts and analyzes resume data using NLP (spaCy), stores it in SQLite, and visualizes insights via a Flask web dashboard.
+# 📄 Resume Parser with NLP & Analytics Dashboard
 
-# 📌 Features
-✔ PDF Resume Parsing - Extracts name, email, skills, education, and experience
+A Python-based tool that extracts and analyzes resume data using **Natural Language Processing (spaCy)**, stores it in **SQLite**, and visualizes insights through a **Flask-based web dashboard**.
 
-✔ NLP-Powered Analysis - Uses spaCy for entity recognition
+---
 
-✔ SQL Database - Stores parsed data in SQLite (can be upgraded to PostgreSQL)
+## 📌 Features
 
-✔ Interactive Dashboard - Flask web app with Matplotlib visualizations
+- ✅ **PDF Resume Parsing** – Extracts name, email, skills, education, and experience  
+- ✅ **NLP-Powered Analysis** – Uses `spaCy` for named entity recognition (NER)  
+- ✅ **SQL Database** – Stores parsed data in `SQLite` (can be upgraded to PostgreSQL)  
+- ✅ **Interactive Dashboard** – Flask app with visual analytics using Matplotlib  
+- ✅ **Easy Upload Interface** – Simple UI to upload and process multiple resumes  
 
-✔ Easy Upload - Simple UI to upload and process resumes
+---
 
+## 🛠 Tech Stack
 
-# 🛠 Tech Stack
+- 🐍 Python  
+- 🧠 spaCy (NLP)  
+- 🌐 Flask (Web Framework)  
+- 🗃️ SQLite (Database)  
+- 📊 Matplotlib (Visualizations)  
+- 📄 PyPDF2 (PDF Text Extraction)
 
-Python (Backend Logic)
+---
 
-spaCy (NLP Processing)
+## 🚀 Quick Setup
 
-Flask (Web Framework)
+### 🔁 Clone the Repository
 
-SQLite (Database)
-
-Matplotlib (Data Visualization)
-
-PyPDF2 (PDF Text Extraction)
-
-# 🚀 Quick Setup
-
-1. Clone the Repository
-
-bash
-
-git clone https://github.com/yourusername/resume-parser.git
-
+```
+git clone https://github.com/yourusername/resume-parser.git  
 cd resume-parser
+```
 
-2. Set Up a Virtual Environment
-   
-bash
+### 🧪 Set Up Virtual Environment
 
+```
 python -m venv venv
 
-source venv/bin/activate  # Linux/Mac
+# For Linux/macOS:
+source venv/bin/activate
 
-venv\Scripts\activate     # Windows
+# For Windows:
+venv\Scripts\activate
+```
 
-3. Install Dependencies
-   
-bash
+### 📦 Install Dependencies
 
+```
 pip install -r requirements.txt
-
 python -m spacy download en_core_web_sm
+```
 
-4. Run the Application
-   
-bash
+### ▶️ Run the App
 
+```
 python app.py
+```
 
-➡ Open http://localhost:5000 in your browser.
+Then open your browser:
 
-# 📂 Project Structure
+```
+http://localhost:5000
+```
 
-resume-parser/  
-├── app.py                # Flask web server  
-├── parser.py             # Resume parsing logic  
-├── analytics.py          # Data visualization  
-├── schema.sql            # Database schema  
-├── templates/            # HTML templates  
-│   └── dashboard.html    # Dashboard UI  
-├── uploads/              # Stores uploaded resumes  
-├── resumes.db            # SQLite database (auto-generated)  
-└── requirements.txt      # Dependencies  
+---
 
-# 📊 Sample Outputs
+## 📂 Project Structure
 
-1. Parsed Resume Data (SQLite)
-   
-Name	    Email	            Skills	                      Experience (Years)
+```
+resume-parser/
+├── app.py              # Flask app and route handling
+├── parser.py           # NLP resume parser logic (spaCy + PyPDF2)
+├── analytics.py        # Visualization logic (matplotlib)
+├── schema.sql          # SQLite schema
+├── templates/
+│   └── dashboard.html  # Dashboard template
+├── uploads/            # Uploaded resume files
+├── resumes.db          # SQLite database (auto-generated)
+└── requirements.txt    # Python dependencies
+```
 
-John Doe	john@example.com	Python, SQL, Machine Learning	 3
+---
 
-2. Dashboard Screenshot
-   
-Dashboard Preview (Screenshot 2025-05-26 115243.png)
+## 📊 Sample Output
 
-# 📈 Future Improvements
+Parsed Resume Example:
 
-🔹 Add user authentication (Flask-Login)
+```
+Name       : John Doe  
+Email      : john@example.com  
+Skills     : Python, SQL, Machine Learning  
+Experience : 3 years
+```
 
-🔹 Deploy on cloud (Heroku / Render)
+Dashboard includes:
+- 📈 Skill frequency distribution  
+- ⏳ Experience vs skill correlation  
+- 🧑 Candidate summaries  
 
-🔹 Improve NLP accuracy (Custom spaCy model)
+---
 
-🔹 Support DOCX/JSON resumes
+## 📈 Future Improvements
+
+- 🔐 Add user authentication using Flask-Login  
+- ☁️ Deploy to cloud (Render, Heroku, or Railway)  
+- 🧠 Improve NLP accuracy using custom-trained spaCy models  
+- 📎 Add support for DOCX and JSON resume formats  
+
+---
 
